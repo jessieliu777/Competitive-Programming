@@ -1,0 +1,100 @@
+import java.io.*;
+import java.util.*;
+ 
+ 
+public class A_Image{
+   public static void main(String[] args) {
+      MyScanner sc = new MyScanner();
+      out = new PrintWriter(new BufferedOutputStream(System.out));
+      
+      // Start writing your solution here. -------------------------------------
+   
+      /*
+      int n      = sc.nextInt();        // read input as integer
+      long k     = sc.nextLong();       // read input as long
+      double d   = sc.nextDouble();     // read input as double
+      String str = sc.next();           // read input as String
+      String s   = sc.nextLine();       // read whole line as String
+
+      int result = 3*n;
+      out.println(result);                    // print via PrintWriter
+      */
+
+      int t = Integer.parseInt(sc.nextLine()); 
+      while (t > 0){
+        Set<Character> set = new HashSet<>();
+        String line1 = sc.nextLine();
+        String line2 = sc.nextLine();
+        set.add(line1.charAt(0));
+        set.add(line1.charAt(1));
+        set.add(line2.charAt(0));
+        set.add(line2.charAt(1));
+        // the answer depends on the number of unique elements
+        // one unique = all repeated = no need to change
+        int size = set.size();
+        if (size == 1){
+            System.out.println(0);
+        } else if (size == 2){
+            System.out.println(1);
+        } else if (size == 3){
+            System.out.println(2);
+        } else {
+            System.out.println(3);
+        }
+        t--;
+      }
+
+      // Stop writing your solution here. -------------------------------------
+      out.close();
+   }
+
+     
+
+   //-----------PrintWriter for faster output---------------------------------
+   public static PrintWriter out;
+      
+   //-----------MyScanner class for faster input----------
+   public static class MyScanner {
+      BufferedReader br;
+      StringTokenizer st;
+ 
+      public MyScanner() {
+         br = new BufferedReader(new InputStreamReader(System.in));
+      }
+ 
+      String next() {
+          while (st == null || !st.hasMoreElements()) {
+              try {
+                  st = new StringTokenizer(br.readLine());
+              } catch (IOException e) {
+                  e.printStackTrace();
+              }
+          }
+          return st.nextToken();
+      }
+ 
+      int nextInt() {
+          return Integer.parseInt(next());
+      }
+ 
+      long nextLong() {
+          return Long.parseLong(next());
+      }
+ 
+      double nextDouble() {
+          return Double.parseDouble(next());
+      }
+ 
+      String nextLine(){
+          String str = "";
+	  try {
+	     str = br.readLine();
+	  } catch (IOException e) {
+	     e.printStackTrace();
+	  }
+	  return str;
+      }
+
+   }
+   //--------------------------------------------------------
+}
