@@ -1,0 +1,16 @@
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int[] result = new int[nums.length];
+        // get the product of every num before i
+        for (int i = 0, tmp = 1; i < nums.length; i++) {
+            result[i] = tmp;
+            tmp *= nums[i];
+        }
+        // get the product of every num after i
+        for (int i = nums.length - 1, tmp = 1; i >= 0; i--) {
+            result[i] *= tmp;
+            tmp *= nums[i];
+        }
+        return result;
+    }
+}
