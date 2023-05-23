@@ -1,0 +1,3 @@
+# Read from the file file.txt and output all valid phone numbers to stdout.
+# Egrep or grep -E is another version of grep or the Extended grep. This version of grep is efficient and fast when it comes to searching for a regular expression pattern as it treats meta-characters as is and doesn’t substitute them as strings like in grep, and hence you are freed from the burden of escaping them as in grep. It uses ERE or the Extended Regular Expression set.
+egrep "^(\([0-9]{3}\) |[0-9]{3}\-)[0-9]{3}\-[0-9]{4}$" file.txt
