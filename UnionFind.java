@@ -10,7 +10,6 @@ class UnionFind {
             parent[i] = i;
             size[i] = 1;
         }
-
     }
     
     public int find(int p) {
@@ -39,4 +38,8 @@ class UnionFind {
     }
     
     public int count() { return count; }
+
+    public int getSizeOfComponent(int c){
+        return size[find(c)];
+    }
 }
